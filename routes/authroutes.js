@@ -12,7 +12,7 @@ router.post('/contact',(req,res)=>{
     var senderEmail=req.body.email;
     var name=req.body.name;
 
-    //SENDING THE MAIL TO VIKASHP0901@GMAIL.COM
+   
     var transporter = nodemailer.createTransport({
         service: "Gmail",
         auth: {
@@ -20,6 +20,7 @@ router.post('/contact',(req,res)=>{
           // pass: process.env.PASSWORD,
           user: 'shantys502@gmail.com',
           pass: 'daiusokngmqktgup',
+         
         },
     });
 
