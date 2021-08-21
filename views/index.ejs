@@ -99,7 +99,7 @@
   <div>
     <h1 style="text-align: center;">Let me introduce myself</h1>
       <p> I am 3r Year student at Delhi Technological university pursuing B.Tech in Software Engineering.
-         I really love to create Innovative project.
+         I really love to create Innovative projects.I have really nice grip on data structures and algorithms.
       </p>
   </div>
 
@@ -182,6 +182,17 @@
     <div class="flex-container">
       <div class="askme" style="flex-grow: 2;">
     <h4 style="text-align: center;">Contact Me</h4>
+    <!-- <div id="messageStatus" class="alert alert-success" role="alert" style="display: none;">
+      
+    </div> -->
+
+
+    <div id="messageStatus" class="alert alert-dismissible fade show" role="alert" style="display: none;">
+      <span id="status"></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- <span id=messageStatus></span> -->
     <form id="myform">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -252,6 +263,21 @@
                 }).then(res=>res.json())
                 .then(result=>{
                     console.log(result)
+                    if(result.success==true){
+                      document.getElementById("messageStatus").style.display = "block";
+                      
+                      document.getElementById("messageStatus").classList.add('alert-success');
+                      document.getElementById('status').innerText="message sent succesfully"
+                     
+                      // location.reload()
+                    }else{
+
+                      document.getElementById("messageStatus").style.display = "block";
+                      
+                      document.getElementById("messageStatus").classList.add('alert-danger');
+                      document.getElementById('status').innerText="Error in sending message"
+
+                    }
                   
                 }).catch(err=>console.log(err))
                 

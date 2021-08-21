@@ -19,7 +19,6 @@ router.post('/contact',(req,res)=>{
           user: process.env.EMAIL,
           pass: process.env.PASSWORD,
          
-         
         },
     });
 
