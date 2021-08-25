@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router()
 const nodemailer=require("nodemailer")
 router.get('/',(req,res)=>{
+
     res.render("index")
   })
   
@@ -16,9 +17,10 @@ router.post('/contact',(req,res)=>{
     var transporter = nodemailer.createTransport({
         service: "Gmail",
         auth: {
-          user: process.env.EMAIL,
-          pass: process.env.PASSWORD,
-         
+          // user: process.env.EMAIL,
+          // pass: process.env.PASSWORD,
+         user:"shantys502@gmail.com",
+         pass:"daiusokngmqktgup"
         },
     });
 
@@ -36,6 +38,7 @@ router.post('/contact',(req,res)=>{
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
+     
         if (error) {
           console.log(error);
           return res.json({success:false,message:error})
