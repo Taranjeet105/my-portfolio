@@ -6,6 +6,7 @@ router.get('/',(req,res)=>{
     res.render("index")
   })
   
+  
 router.post('/contact',(req,res)=>{
     console.log(req.body)
 
